@@ -1,2 +1,9 @@
 /.pc
 *~
+/aha
+/build-stamp
+/configure-stamp
+/debian/aha.debhelper.log
+/debian/aha.substvars
+/debian/aha
+/debian/files
