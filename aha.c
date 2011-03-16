@@ -127,7 +127,7 @@ int main(int argc,char* args[])
   {
     if ((strcmp(args[p],(char*)"--help")==0) || (strcmp(args[p],(char*)"-h")==0) || (strcmp(args[p],(char*)"-?")==0))
     {
-      printf("\033[1;31mAnsi Html Adapter\033[0m Version 0.4\n");
+      printf("\033[1;31mAnsi Html Adapter\033[0m Version 0.4.2\n");
       printf("\033[1maha\033[0m takes SGR-colored Input and prints W3C conform HTML-Code\n");
       printf("use: \033[1maha\033[0m <\033[4moptions\033[0m> [\033[4m-f file\033[0m]\n");
       printf("     \033[1maha\033[0m (\033[4m--help\033[0m|\033[4m-h\033[0m|\033[4m-?\033[0m)\n");
@@ -135,7 +135,7 @@ int main(int argc,char* args[])
       printf("         --pink,     -p: \033[1;35mPink\033[0m Background\n");
       printf("         --iso X,  -i X: Uses ISO 8859-X instead of utf-8. X must be 1..16\n");
       printf("         --line-fix, -l: Uses a fix for inputs using control sequences to\n");
-      printf("                         change the cursor position like htop. Its a hot fix,\n");
+      printf("                         change the cursor position like htop. It's a hot fix,\n");
       printf("                         it may not work with any program like htop. Example:\n");
       printf("                         \033[1mecho\033[0m q | \033[1mhtop\033[0m | \033[1maha\033[0m -l > htop.htm\n");
       printf("\033[1maha\033[0m reads the Input from a file or stdin and writes HTML-Code to stdout\n");
@@ -145,6 +145,12 @@ int main(int argc,char* args[])
       printf("         \033[5;36mzizsdl@googlemail.com\033[0m\n");
       printf("         \033[5;36mhttp://ziz.delphigl.com/tool_aha.php\033[0m\n");
       printf("This application is subject to the \033[1;34mMPL\033[0m or \033[1;34mLGPL\033[0m.\n");
+      return 0;
+    }
+    else
+    if ((strcmp(args[p],(char*)"--version")==0) || (strcmp(args[p],(char*)"-v")==0))
+    {
+      printf("\033[1;31mAnsi Html Adapter\033[0m Version 0.4.2\n");
       return 0;
     }
     else
