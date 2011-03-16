@@ -2,6 +2,7 @@ aha (0.4.2-1) unstable; urgency=low
 
   * New upstream version
     + Incudes man page (→ debian/aha.manpages)
+  * Better description (Closes: #615913)
 
  -- Axel Beckert <abe@debian.org>  Wed, 16 Mar 2011 02:04:29 +0100
 
