@@ -1,0 +1,4 @@
+Version 0.4.3:
+
+- new option "--title" for an alternative title in the html file
+- Fixed Bug 624233 (typo in manpage -color -> --color)
