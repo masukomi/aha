@@ -17,6 +17,7 @@
  For feedback and questions about my Files and Projects please mail me,     
  Alexander Matthes (Ziz) , zizsdl_at_googlemail.com                         
 */
+#define AHA_VERSION "0.4.3"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -122,26 +123,29 @@ int main(int argc,char* args[])
   int iso=-1; //utf8
   char htop_fix=0;
   char line_break=0;
+  char* title=NULL;
   //Searching Parameters
   for (int p = 1;p<argc;p++)
   {
     if ((strcmp(args[p],(char*)"--help")==0) || (strcmp(args[p],(char*)"-h")==0) || (strcmp(args[p],(char*)"-?")==0))
     {
-      printf("\033[1;31mAnsi Html Adapter\033[0m Version 0.4.2\n");
+      printf("\033[1;31mAnsi Html Adapter\033[0m Version "AHA_VERSION"\n");
       printf("\033[1maha\033[0m takes SGR-colored Input and prints W3C conform HTML-Code\n");
       printf("use: \033[1maha\033[0m <\033[4moptions\033[0m> [\033[4m-f file\033[0m]\n");
       printf("     \033[1maha\033[0m (\033[4m--help\033[0m|\033[4m-h\033[0m|\033[4m-?\033[0m)\n");
-      printf("\033[4moptions\033[0m: --black,    -b: \033[1;30m\033[1;47mBlack\033[0m Background and \033[1;37mWhite\033[0m \"standard color\"\n");
-      printf("         --pink,     -p: \033[1;35mPink\033[0m Background\n");
-      printf("         --iso X,  -i X: Uses ISO 8859-X instead of utf-8. X must be 1..16\n");
-      printf("         --line-fix, -l: Uses a fix for inputs using control sequences to\n");
-      printf("                         change the cursor position like htop. It's a hot fix,\n");
-      printf("                         it may not work with any program like htop. Example:\n");
-      printf("                         \033[1mecho\033[0m q | \033[1mhtop\033[0m | \033[1maha\033[0m -l > htop.htm\n");
+      printf("\033[4moptions\033[0m: --black,     -b: \033[1;30m\033[1;47mBlack\033[0m Background and \033[1;37mWhite\033[0m \"standard color\"\n");
+      printf("         --pink,      -p: \033[1;35mPink\033[0m Background\n");
+      printf("         --iso X,   -i X: Uses ISO 8859-X instead of utf-8. X must be 1..16\n");
+      printf("         --title X, -t X: Gives the html output the title \"X\" instead of \"stdin\"\n");
+      printf("                          or the filename\n");
+      printf("         --line-fix,  -l: Uses a fix for inputs using control sequences to\n");
+      printf("                          change the cursor position like htop. It's a hot fix,\n");
+      printf("                          it may not work with any program like htop. Example:\n");
+      printf("                          \033[1mecho\033[0m q | \033[1mhtop\033[0m | \033[1maha\033[0m -l > htop.htm\n");
       printf("\033[1maha\033[0m reads the Input from a file or stdin and writes HTML-Code to stdout\n");
       printf("Example: \033[1maha\033[0m --help | \033[1maha\033[0m --black > aha-help.htm\n");
       printf("         Writes this help text to the file aha-help.htm\n\n");
-      printf("Copyleft \033[1;32mAlexander Matthes\033[0m aka \033[4mZiz\033[0m 2010\n");
+      printf("Copyleft \033[1;32mAlexander Matthes\033[0m aka \033[4mZiz\033[0m 2011\n");
       printf("         \033[5;36mzizsdl@googlemail.com\033[0m\n");
       printf("         \033[5;36mhttp://ziz.delphigl.com/tool_aha.php\033[0m\n");
       printf("This application is subject to the \033[1;34mMPL\033[0m or \033[1;34mLGPL\033[0m.\n");
@@ -150,8 +154,19 @@ int main(int argc,char* args[])
     else
     if ((strcmp(args[p],(char*)"--version")==0) || (strcmp(args[p],(char*)"-v")==0))
     {
-      printf("\033[1;31mAnsi Html Adapter\033[0m Version 0.4.2\n");
+      printf("\033[1;31mAnsi Html Adapter\033[0m Version "AHA_VERSION"\n");
       return 0;
+    }
+    else
+    if ((strcmp(args[p],"--title")==0) || (strcmp(args[p],"-t")==0))
+    {
+      if (p+1>=argc)
+      {
+        fprintf(stderr,"No title given!\n");
+        return 0;
+      }
+      title=args[p+1];
+      p++;
     }
     else
     if ((strcmp(args[p],"--line-fix")==0) || (strcmp(args[p],"-l")==0))
@@ -212,10 +227,15 @@ int main(int argc,char* args[])
   printf("<!-- This file was created with the aha Ansi HTML Adapter. http://ziz.delphigl.com/tool_aha.php -->\n");
   printf("<html xmlns=\"http://www.w3.org/1999/xhtml\">\n");
   printf("<head>\n<meta http-equiv=\"Content-Type\" content=\"application/xml+xhtml; charset=UTF-8\" />\n");
-  if (filename==NULL)
-    printf("<title>stdin</title>\n");  
+  if (title)
+    printf("<title>%s</title>\n",title);
   else
-    printf("<title>%s</title>\n",filename);
+  {
+    if (filename==NULL)
+      printf("<title>stdin</title>\n");
+    else
+      printf("<title>%s</title>\n",filename);
+  }
   printf("</head>\n");
   switch (colorshema)
   {

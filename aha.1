@@ -1,4 +1,4 @@
-.TH aha 1 "January 10, 2011" "" "Ansi HTML Adapter"
+.TH aha 1 "May 7, 2011" "" "Ansi HTML Adapter"
 
 .SH NAME
 
@@ -28,26 +28,29 @@ Pink Background
 \fB\-\-iso X , \-i X
 Uses ISO 8859-X instead of utf-8. X must be 1..16
 .TP
+\fB\-\-title X , \-t X
+Gives the html output the title \"X\" instead of stdin or the filename
+.TP
 \fB\-\-line\-fix , \-l
 Uses a fix for inputs using control sequences to change the cursor position like htop. It's a hot fix, it may not work with any program like htop. (See \fBEXAMPLE\fP)
 
 
 .SH EXAMPLE
 .TP
-\fBaha\fP \-\-help | \fBaha\fP \-\-black > aha-help.htm
+\fBaha\fP \-\-help | \fBaha\fP \-\-black --title "the awesome aha help"> aha-help.htm
 Creates an HTML file with the help of aha with black background
 .TP
 \fBcolordiff\fP oldfile.c newfile.c | \fBaha\fP > colordiff.htm
 Creates an HTML file with a colorful diff-output of two files "oldfile.c" and "newfile.c" with white background
 .TP
-\fBls\fP \-color=always | \fBaha\fP \-\-pink > ls.htm
+\fBls\fP \--color=always | \fBaha\fP \-\-pink > ls.htm
 Creates an HTML file with a colorful ls-output with pink background.
 .TP
 \fBecho\fP a | \fBhtop\fP | \fBaha\fP \-\-black \-\-line\-fix > htop.htm
 Creates an HTML file with the output of htop. You have to use \fB\-\-line\-fix\fP due the other new-line-commands htop uses.
 
 .SH AUTHOR
-Copyleft Alexander Matthes aka Ziz 2010
+Copyleft Alexander Matthes aka Ziz 2011
 .br
 zizsdl@googlemail.com
 
