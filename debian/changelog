@@ -1,10 +1,10 @@
-aha (0.4.3-1) UNRELEASED; urgency=low
+aha (0.4.3-1) unstable; urgency=low
 
   * New upstream version
     + Fixes typo in man page (Closes: #624233)
   * Bump Standards-Version to 3.9.2 (no changes)
 
- -- Axel Beckert <abe@debian.org>  Wed, 11 May 2011 19:49:32 +0200
+ -- Axel Beckert <abe@debian.org>  Wed, 11 May 2011 23:23:28 +0200
 
 aha (0.4.2-1) unstable; urgency=low
 
