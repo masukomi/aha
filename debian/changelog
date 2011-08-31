@@ -1,11 +1,11 @@
-aha (0.4.4-1) UNRELEASED; urgency=low
+aha (0.4.4-1) unstable; urgency=low
 
   * New upstream release
     + Fixes issues with underlined and inverse text
   * Fix lintian warning helper-templates-in-copyright
   * Fix lintian warning debian-rules-missing-recommended-target
 
- -- Axel Beckert <abe@debian.org>  Wed, 31 Aug 2011 22:54:04 +0200
+ -- Axel Beckert <abe@debian.org>  Wed, 31 Aug 2011 23:17:58 +0200
 
 aha (0.4.3-1) unstable; urgency=low
 
