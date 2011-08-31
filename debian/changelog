@@ -1,3 +1,10 @@
+aha (0.4.4-1) UNRELEASED; urgency=low
+
+  * New upstream release
+    + Fixes issues with underlined and inverse text
+
+ -- Axel Beckert <abe@debian.org>  Wed, 31 Aug 2011 22:54:04 +0200
+
 aha (0.4.3-1) unstable; urgency=low
 
   * New upstream version
