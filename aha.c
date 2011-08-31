@@ -17,7 +17,7 @@
  For feedback and questions about my Files and Projects please mail me,     
  Alexander Matthes (Ziz) , zizsdl_at_googlemail.com                         
 */
-#define AHA_VERSION "0.4.3"
+#define AHA_VERSION "0.4.4"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -259,6 +259,7 @@ int main(int argc,char* args[])
   int line=0;
   int momline=0;
   int newline=-1;
+  int temp;
   while ((c=fgetc(fp)) != EOF)
   {
     if ((c=='\033'))
@@ -288,6 +289,7 @@ int main(int argc,char* args[])
       switch (c)
       {
         case 'm': 
+          //printf("\n%s\n",buffer); //DEBUG
           elem=parseInsert(buffer);
           pelem momelem=elem;
           while (momelem!=NULL)
@@ -305,10 +307,37 @@ int main(int argc,char* args[])
               switch (momelem->digit[mompos])
               {
                 case 1: bo=1; break;
-                case 2: if (mompos+1<momelem->digitcount && momelem->digit[mompos+1]==1) //Reset blink and bold
+                case 2: if (mompos+1<momelem->digitcount) 
+                        switch (momelem->digit[mompos+1])
                         {
-                          bo=0;
-                          bl=0;
+                          case 1: //Reset blink and bold
+                            bo=0;
+                            bl=0;
+                            break;
+                          case 4: //Reset underline
+                            ul=0;
+                            break;
+                            case 7: //Reset Inverted
+                            temp = bc;
+                            if (fc == -1 || fc == 9)
+                            {
+                              if (colorshema!=1)
+                                bc = 0;
+                              else
+                                bc = 7;
+                            }
+                            else
+                              bc = fc;
+                            if (temp == -1 || temp == 9)
+                            {
+                              if (colorshema!=1)
+                                fc = 7;
+                              else
+                                fc = 0;
+                            }
+                            else
+                              fc = temp;
+                            break;
                         }
                         break;
             case 3: if (mompos+1<momelem->digitcount)
@@ -321,6 +350,25 @@ int main(int argc,char* args[])
                     break;
             case 5: bl=1; break;
             case 7: //TODO: Inverse
+                    temp = bc;
+                    if (fc == -1 || fc == 9)
+                    {
+                      if (colorshema!=1)
+                        bc = 0;
+                      else
+                        bc = 7;
+                    }
+                    else
+                      bc = fc;
+                    if (temp == -1 || temp == 9)
+                    {
+                      if (colorshema!=1)
+                        fc = 7;
+                      else
+                        fc = 0;
+                    }
+                    else
+                      fc = temp;
                     break;
               }
             }
@@ -392,7 +440,7 @@ int main(int argc,char* args[])
             case  7: if (colorshema!=1) 
                        printf("color:gray;");
                      else
-                       printf("color:silver;");
+                       printf("color:white;");
                      break; //White
             case  9: if (colorshema!=1)
                        printf("color:black;");
@@ -433,7 +481,7 @@ int main(int argc,char* args[])
             case  7: if (colorshema!=1) 
                        printf("background-color:gray;");
                      else
-                       printf("background-color:silver;");
+                       printf("background-color:white;");
                      break; break; //White
             case  9: if (colorshema==1)
                        printf("background-color:black;");
