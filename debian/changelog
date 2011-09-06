@@ -1,3 +1,9 @@
+aha (0.4.4-2) UNRELEASED; urgency=low
+
+  * Fix typo in 0.4.2-1 changelog entry
+
+ -- Axel Beckert <abe@debian.org>  Tue, 06 Sep 2011 14:04:49 +0200
+
 aha (0.4.4-1) unstable; urgency=low
 
   * New upstream release
@@ -18,7 +24,7 @@ aha (0.4.3-1) unstable; urgency=low
 aha (0.4.2-1) unstable; urgency=low
 
   * New upstream version
-    + Incudes man page (→ debian/aha.manpages)
+    + Includes man page (→ debian/aha.manpages)
   * Better description (Closes: #615913)
 
  -- Axel Beckert <abe@debian.org>  Wed, 16 Mar 2011 02:04:29 +0100
