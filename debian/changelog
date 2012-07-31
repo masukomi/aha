@@ -2,6 +2,7 @@ aha (0.4.6-1) UNRELEASED; urgency=low
 
   * New upstream release
   * Update watch file to also look at GitHub
+  * Bump Standards-Version to 3.9.3 (no changes)
   * Fix typo in 0.4.2-1 changelog entry
 
  -- Axel Beckert <abe@debian.org>  Tue, 31 Jul 2012 13:11:21 +0200

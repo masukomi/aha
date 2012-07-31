@@ -3,7 +3,7 @@ Section: utils
 Priority: extra
 Maintainer: Axel Beckert <abe@debian.org>
 Build-Depends: debhelper (>= 7)
-Standards-Version: 3.9.2
+Standards-Version: 3.9.3
 Homepage: http://ziz.delphigl.com/tool_aha.php
 Vcs-Git: git://git.debian.org/collab-maint/aha.git
 Vcs-Browser: http://git.debian.org/?p=collab-maint/aha.git;a=summary
