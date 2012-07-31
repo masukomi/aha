@@ -1,2 +1,3 @@
 version=3
 http://ziz.delphigl.com/tool_aha.php (?:./)?data/aha(?:-src)?-(.*).tar.gz
+https://github.com/theZiz/aha/tags .*/tarball/(\d[\d\.]+)

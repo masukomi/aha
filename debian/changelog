@@ -1,5 +1,6 @@
 aha (0.4.4-2) UNRELEASED; urgency=low
 
+  * Update watch file to also look at GitHub
   * Fix typo in 0.4.2-1 changelog entry
 
  -- Axel Beckert <abe@debian.org>  Tue, 06 Sep 2011 14:04:49 +0200
