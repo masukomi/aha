@@ -1,9 +1,10 @@
-aha (0.4.4-2) UNRELEASED; urgency=low
+aha (0.4.6-1) UNRELEASED; urgency=low
 
+  * New upstream release
   * Update watch file to also look at GitHub
   * Fix typo in 0.4.2-1 changelog entry
 
- -- Axel Beckert <abe@debian.org>  Tue, 06 Sep 2011 14:04:49 +0200
+ -- Axel Beckert <abe@debian.org>  Tue, 31 Jul 2012 13:11:21 +0200
 
 aha (0.4.4-1) unstable; urgency=low
 
