@@ -1,4 +1,4 @@
-aha (0.4.6-1) UNRELEASED; urgency=low
+aha (0.4.6-1) experimental; urgency=low
 
   * New upstream release
   * Update watch file to also look at GitHub
@@ -15,7 +15,7 @@ aha (0.4.6-1) UNRELEASED; urgency=low
   * Update copyright years in debian/control
   * Fix typo in 0.4.2-1 changelog entry
 
- -- Axel Beckert <abe@debian.org>  Tue, 31 Jul 2012 13:11:21 +0200
+ -- Axel Beckert <abe@debian.org>  Wed, 01 Aug 2012 18:29:25 +0200
 
 aha (0.4.4-1) unstable; urgency=low
 
