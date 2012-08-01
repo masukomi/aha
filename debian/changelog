@@ -2,6 +2,10 @@ aha (0.4.6-1) UNRELEASED; urgency=low
 
   * New upstream release
   * Update watch file to also look at GitHub
+  * Enable hardening build flags
+    - Cherry-pick bf5ed98 (Honor common compiler and linker flags) from
+      upstream
+    - Add build-dependency on dpkg-dev (>= 1.16.1~)
   * Bump Standards-Version to 3.9.3 (no changes)
   * Fix typo in 0.4.2-1 changelog entry
 
