@@ -27,12 +27,12 @@ License:
     rights and limitations under the License.
 
     Alternatively, the contents of this file may be used under the
-    terms of the GNU Lesser General Public license (the "LGPL
-    License"), in which case the provisions of LGPL License are
-    applicable instead of those above.
+    terms of the GNU Lesser General Public license version 3 or later
+    (the "LGPL License"), in which case the provisions of LGPL License
+    are applicable instead of those above.
 
 On Debian systems, the complete text of the GNU Lesser General Public
-License can be found in "/usr/share/common-licenses/LGPL".
+License can be found in "/usr/share/common-licenses/LGPL-3".
 
 Following is the full text of the Mozilla Public License (MPL) Version
 1.1:

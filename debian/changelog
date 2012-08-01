@@ -7,6 +7,9 @@ aha (0.4.6-1) UNRELEASED; urgency=low
       upstream
     - Add build-dependency on dpkg-dev (>= 1.16.1~)
   * Add patch to fix several hyphen-used-as-minus-sign issues
+  * Explicitly refer to LGPL version (or later) in debian/copyright as
+    stated by upstream on IRC. Fixes lintian warning
+    copyright-refers-to-symlink-license.
   * Bump Standards-Version to 3.9.3 (no changes)
   * Add full text of MPL 1.1 to debian/control
   * Update copyright years in debian/control
