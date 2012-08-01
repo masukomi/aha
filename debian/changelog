@@ -7,6 +7,7 @@ aha (0.4.6-1) UNRELEASED; urgency=low
       upstream
     - Add build-dependency on dpkg-dev (>= 1.16.1~)
   * Bump Standards-Version to 3.9.3 (no changes)
+  * Add full text of MPL 1.1 to debian/control
   * Fix typo in 0.4.2-1 changelog entry
 
  -- Axel Beckert <abe@debian.org>  Tue, 31 Jul 2012 13:11:21 +0200
