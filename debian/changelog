@@ -9,6 +9,7 @@ aha (0.4.6-2) UNRELEASED; urgency=low
     - Finally switch to a dh7 style debian/rules file
   * Fix lintian warning vcs-field-not-canonical
   * Bump Standards-Version to 3.9.4 (no changes)
+  * Apply wrap-and-sort
 
  -- Axel Beckert <abe@debian.org>  Mon, 20 May 2013 19:57:39 +0200
 
