@@ -1,5 +1,6 @@
-aha (0.4.6-2) UNRELEASED; urgency=low
+aha (0.4.6-2) unstable; urgency=low
 
+  * Upload to unstable again
   * Bump debhelper compatibility to 9
     - Update versioned debhelper build dependency
   * Revamp debian/rules:
@@ -11,7 +12,7 @@ aha (0.4.6-2) UNRELEASED; urgency=low
   * Bump Standards-Version to 3.9.4 (no changes)
   * Apply wrap-and-sort
 
- -- Axel Beckert <abe@debian.org>  Mon, 20 May 2013 19:57:39 +0200
+ -- Axel Beckert <abe@debian.org>  Mon, 20 May 2013 20:15:57 +0200
 
 aha (0.4.6-1) experimental; urgency=low
 
