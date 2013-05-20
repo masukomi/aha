@@ -2,6 +2,9 @@ aha (0.4.6-2) UNRELEASED; urgency=low
 
   * Bump debhelper compatibility to 9
     - Update versioned debhelper build dependency
+  * Revamp debian/rules:
+    - Use debian/clean instead of calling rm explicitly
+    - No more remove stamp files manually, dh_clean does that already
 
  -- Axel Beckert <abe@debian.org>  Mon, 20 May 2013 19:57:39 +0200
 
