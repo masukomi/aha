@@ -6,6 +6,7 @@ aha (0.4.6-2) UNRELEASED; urgency=low
     - Use debian/clean instead of calling rm explicitly
     - No more remove stamp files manually, dh_clean does that already
     - Use dh_auto_build and remove inclusion of buildflags.mk
+    - Finally switch to a dh7 style debian/rules file
 
  -- Axel Beckert <abe@debian.org>  Mon, 20 May 2013 19:57:39 +0200
 
