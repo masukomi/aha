@@ -1,6 +1,7 @@
 aha (0.4.6-3) unstable; urgency=low
 
   * Change homepage to point to GitHub
+  * Use githubredir.debian.net instead of github itself in watch file
 
  -- Axel Beckert <abe@debian.org>  Sun, 14 Jul 2013 19:05:24 +0200
 
