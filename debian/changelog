@@ -1,5 +1,7 @@
-aha (0.4.6-3) unstable; urgency=low
+aha (0.4.6.1-1) unstable; urgency=low
 
+  * New upstream release
+    + Drop all patches, applied upstream
   * Change homepage to point to GitHub
   * Use githubredir.debian.net instead of github itself in watch file
 
