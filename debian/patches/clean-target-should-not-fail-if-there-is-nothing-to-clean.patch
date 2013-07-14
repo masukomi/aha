@@ -1,0 +1,13 @@
+Description: clean target shouldn't fail if there's nothing to clean
+Author: Axel Beckert <abe@debian.org>
+
+Index: aha/Makefile
+===================================================================
+--- aha.orig/Makefile	2013-07-14 20:12:24.036079971 +0200
++++ aha/Makefile	2013-07-14 20:15:59.320815970 +0200
+@@ -4,4 +4,4 @@
+ 	gcc -std=c99 $(CFLAGS) $(LDFLAGS) $(CPPFLAGS) aha.c -o aha
+ 
+ clean:
+-	rm aha
++	rm -f aha

@@ -1,7 +1,8 @@
 aha (0.4.6.1-1) unstable; urgency=low
 
   * New upstream release
-    + Drop all patches, applied upstream
+    + Drop all existing patches, applied upstream
+    + Patch clean target so it doesn't fail if there's nothing to clean
   * Change homepage to point to GitHub
   * Use githubredir.debian.net instead of github itself in watch file
 
