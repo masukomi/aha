@@ -5,7 +5,7 @@ Maintainer: Axel Beckert <abe@debian.org>
 Build-Depends: debhelper (>= 9~),
                dpkg-dev (>= 1.16.1~)
 Standards-Version: 3.9.4
-Homepage: http://ziz.delphigl.com/tool_aha.php
+Homepage: https://github.com/theZiz/aha
 Vcs-Git: git://anonscm.debian.org/collab-maint/aha.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/aha.git
 
