@@ -1,3 +1,3 @@
 version=3
 http://githubredir.debian.net/github/theZiz/aha .*/([0-9.]+)\.tar\.gz
-http://ziz.delphigl.com/tool_aha.php (?:./)?data/aha(?:-src)?-(.*).tar.gz
+#http://ziz.delphigl.com/tool_aha.php (?:./)?data/aha(?:-src)?-(.*).tar.gz
