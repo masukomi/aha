@@ -8,5 +8,4 @@
 	dh $@
 
 override_dh_auto_install:
-	install -d $(CURDIR)/debian/aha/usr/bin/
-	install aha $(CURDIR)/debian/aha/usr/bin/
+	dh_auto_install -- PREFIX=/usr MAN=debian/aha/usr/share/man/man1
