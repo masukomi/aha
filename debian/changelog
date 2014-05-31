@@ -1,4 +1,4 @@
-aha (0.4.7.1-1) UNRELEASED; urgency=medium
+aha (0.4.7.1-1) unstable; urgency=medium
 
   * New upstream release
     + Refreshed clean-target-should-not-fail-if-there-is-nothing-to-clean.patch
@@ -8,7 +8,7 @@ aha (0.4.7.1-1) UNRELEASED; urgency=medium
   * Remove empty debian/docs
   * Bump Standards-Version to 3.9.5 (no changes)
 
- -- Axel Beckert <abe@debian.org>  Sat, 31 May 2014 12:22:19 +0200
+ -- Axel Beckert <abe@debian.org>  Sat, 31 May 2014 13:50:09 +0200
 
 aha (0.4.6.1-1) unstable; urgency=low
 
