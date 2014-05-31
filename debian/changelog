@@ -5,6 +5,7 @@ aha (0.4.7.1-1) UNRELEASED; urgency=medium
     + Update override for dh_auto_install (upstream has an install target now,
       but with issues)
   * Comment out original, currently not reachable homepage in watch file
+  * Remove empty debian/docs
 
  -- Axel Beckert <abe@debian.org>  Sat, 31 May 2014 12:22:19 +0200
 
