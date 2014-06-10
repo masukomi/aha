@@ -1,21 +1,21 @@
 /*
- The contents of this file are subject to the Mozilla Public License				
- Version 1.1 (the "License"); you may not use this file except in					 
- compliance with the License. You may obtain a copy of the License at			 
- http://www.mozilla.org/MPL/																								
-																																						
- Software distributed under the License is distributed on an "AS IS"				
- basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the		
- License for the specific language governing rights and limitations				 
- under the License.																												 
-																																						
- Alternatively, the contents of this file may be used under the terms			 
- of the GNU Lesser General Public license (the	"LGPL License"), in which case the	
- provisions of LGPL License are applicable instead of those									
- above.																																		 
-																																						
- For feedback and questions about my Files and Projects please mail me,		 
- Alexander Matthes (Ziz) , zizsdl_at_googlemail.com												 
+ The contents of this file are subject to the Mozilla Public License
+ Version 1.1 (the "License"); you may not use this file except in
+ compliance with the License. You may obtain a copy of the License at
+ http://www.mozilla.org/MPL/
+
+ Software distributed under the License is distributed on an "AS IS"
+ basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See the
+ License for the specific language governing rights and limitations
+ under the License.
+
+ Alternatively, the contents of this file may be used under the terms
+ of the GNU Lesser General Public license (the	"LGPL License"), in which case the
+ provisions of LGPL License are applicable instead of those
+ above.
+
+ For feedback and questions about my Files and Projects please mail me,
+ Alexander Matthes (Ziz) , zizsdl_at_googlemail.com
 */
 #define AHA_VERSION "0.4.7.1"
 #include <stdlib.h>
@@ -64,7 +64,7 @@ pelem parseInsert(char* s)
 				digit[0]=0;
 				digitcount=1;
 			}
-			
+
 			pelem newelem=(pelem)malloc(sizeof(telem));
 			for (unsigned char a=0;a<8;a++)
 				newelem->digit[a]=digit[a];
@@ -197,7 +197,7 @@ int main(int argc,char* args[])
 				fprintf(stderr,"not a valid ISO code: ISO 8859-%s\n",args[p+1]);
 				return 0;
 			}
-			p++;			
+			p++;
 		}
 		else
 		if (strcmp(args[p],"-f")==0)
@@ -222,7 +222,7 @@ int main(int argc,char* args[])
 			return 0;
 		}
 	}
-	
+
 	if (no_header == 0)
 	{
 		//Header:
@@ -317,13 +317,13 @@ int main(int argc,char* args[])
 				case 2: printf("<body style=\"background-color:pink\">\n");	break;
 			}
 		}
-		
-		//Standardwerte:
+
+		//default values:
 		//printf("<div style=\"font-family:monospace; white-space:pre\">");
 		printf("<pre>\n");
 	}
 
-	//Begin of Convertion
+	//Begin of Conversion
 	unsigned int c;
 	int fc = -1; //Standard Foreground Color //IRC-Color+8
 	int bc = -1; //Standard Background Color //IRC-Color+8
@@ -363,7 +363,7 @@ int main(int argc,char* args[])
 			pelem elem;
 			switch (c)
 			{
-				case 'm': 
+				case 'm':
 					//printf("\n%s\n",buffer); //DEBUG
 					elem=parseInsert(buffer);
 					pelem momelem=elem;
@@ -382,7 +382,7 @@ int main(int argc,char* args[])
 							switch (momelem->digit[mompos])
 							{
 								case 1: bo=1; break;
-								case 2: if (mompos+1<momelem->digitcount) 
+								case 2: if (mompos+1<momelem->digitcount)
 												switch (momelem->digit[mompos+1])
 												{
 													case 1: //Reset blink and bold
@@ -451,8 +451,8 @@ int main(int argc,char* args[])
 					}
 					deleteParse(elem);
 				break;
-				case 'H': 
-					if (htop_fix) //a lil dirty ...
+				case 'H':
+					if (htop_fix) //a little dirty ...
 					{
 						elem=parseInsert(buffer);
 						pelem second=elem->next;
@@ -475,7 +475,7 @@ int main(int argc,char* args[])
 					for (;line<80;line++)
 						printf(" ");
 				}
-			//Checking the differeces
+			//Checking the differences
 			if ((fc!=ofc) || (bc!=obc) || (ul!=oul) || (bo!=obo) || (bl!=obl)) //ANY Change
 			{
 				if ((ofc!=-1) || (obc!=-1) || (oul!=0) || (obo!=0) || (obl!=0))
@@ -630,7 +630,7 @@ int main(int argc,char* args[])
 
 					printf("\">");
 				}
-			}			
+			}
 		}
 		else
 		if (c==13 && htop_fix)
@@ -680,15 +680,15 @@ int main(int argc,char* args[])
 						bits++;
 					for (int meow=1;meow<bits;meow++)
 						printf("%c",getNextChar(fp));
-				
+
 				}
 		}
 	}
-	
+
 	//Footer
 	if ((fc!=-1) || (bc!=-1) || (ul!=0) || (bo!=0) || (bl!=0))
 		printf("</span>\n");
-	
+
 	if (no_header == 0)
 	{
 		printf("</pre>\n");
